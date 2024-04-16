@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    >
+    <link
+      href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet"
+    >
+    <title>E-commerce</title>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header id="header">
+      <div class="user-and-icons-wrapper">
+        <div class="user-and-icons">
+          <div class="need-help">
+            <span>
+              <i class="fa fa-light fa-phone"></i>
+            </span>
+            <p>NEED HELP ?</p>
+          </div>
+          <nav>
+            <div class="user-and-name">
+              <span>
+                <i class="fa fa-regular fa-user"></i> 
+              </span>
+              <p tabindex="0"><a href="/signin" id="signin">Sign In</a></p>
+              <p tabindex="0"><a href="/signin" id="name">KHAJA SHAIK</a></p>
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div class="cart-icon">
+              <p>CART</p>
+              <span id="fa-cart-shopping" title="0" tabindex="1">
+                <i class="fa-solid fa-bag-shopping fa-xs"></i>
+              </span>
+            </div>
+            <div class="wishlist-icon">
+              <p>WISHLIST</p>
+              <span id="fa-heart" title="0" tabindex="0">
+                <i class="fa-regular fa-heart fa-xs"></i>
+              </span>
+            </div>
+            <!-- <div class="cart-icon">
+              <p>CART</p>
+              <span id="fa-cart-shopping" title="0" tabindex="1">
+                <i class="fa-solid fa-bag-shopping fa-2xs"></i>
+              </span>
+            </div> -->
+          </nav>
+        </div>
+      </div>
+      <div class="logo-and-search">
+        <div class="logo" tabindex="0">
+          <img src="./assests/Kraya_logo.svg" alt="Logo">
+          <div class="logoBox">
+            <p>KRAYA.</p>
+          </div>
+        </div>
+        <div class="navigations">
+          <!-- <div class="navgiation-slider">	&gt;</div> -->
+          <ul>
+            <li><a href="#">PHONE</a></li>
+            <li><a href="#">TELEVISION</a></li>
+            <li><a href="#">REFRIGERATOR</a></li>
+            <li><a href="#">LAPTOP</a></li>
+            <li><a href="#">WASHING MACHINE</a></li>
+            <li><a href="#">DOWNLOADS</a></li>
+          </ul>
+          <!-- <div class="navgiation-slider">&lt;</div> -->
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search for products" id="text" style="display: none;">
+          <i class="fa fa-light fa-magnifying-glass" id="glass"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>  
+      <div class="container" id="container">
+        <div class="wrapper">
+          <div class="sort-and-filter">
+            <div>
+              <span>
+                <i class="fa-solid fa-bars-staggered"></i>
+              </span>
+              <p>SORY BY</p>
+            </div>
+            <div>
+              <span>
+                <i class="fa-solid fa-filter"></i>
+              </span>
+              <p>FILTERS</p>
+            </div>
+          </div>
+          <div class="results-count">
+            <p>12 Results</p>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="products-list" id="products-list">
+          </div>
+        </div>
+      </div>
+
+      <div class="desk-container" id="desk-container">
+        <div class="desk-wrapper">
+          <div class="filter-listing-area" tabindex="0"> 
+            <div class="filters-top">
+              <p>HOME / MOBILES</p>
+            </div>
+            <div class="products-top">
+              <div class="products-top-left">
+                <p>Showing 1-40 of 90 results for "honor"</p>
+              </div>
+              <div class="products-top-right">
+                <p class="sort" tabindex="0">Sort By</p>
+                <div>
+                  <p class="relevance" tabindex="0" id="relevance">Relevance</p>
+                  <p class="relevance" id="low-high" tabindex="0">Price low-High</p>
+                  <p class="relevance" tabindex="0" id="newest-first">Newest First</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex;">
+            <aside>
+              <div class="aside-wrapper">
+                <div class="filters aside-mei" tabindex="0">
+                  <div class="filters-inside">
+                    <p>FILTERS</p>
+                    <p class="clearAll" id="clearAll" tabindex="0">CLEAR ALL</p>
+                  </div>
+                  <div class="filter-added-waala" id="filter-added-waala">
+                    <!-- <p class="added-filter">
+                      <span>&#10005;</span> Apple
+                    </p> -->
+                  </div>
+                </div>
+  
+                <div class="price aside-mei" style="overflow-y:auto;">
+                    <div class="accordion" tabindex="0">
+                      <p>Price</p>
+                      <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                  <div class="panel aside-mei slider-parent">
+                    <div id="slider"></div>
+                    <div class="amount-view" id="amount-view">
+                      <div class="amount" id="amount-min" tabindex="0">$ 10,000</div>
+                      
+                      <div class="amount" id="amount-max" tabindex="0">$ 100,000</div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="brand aside-mei">
+                  <div class="accordion" tabindex="0">
+                    <p>Brand</p>
+                    <i class="fa-solid fa-angle-down"></i>
+                  </div>
+                  <div class="panel aside-mei">
+                    <ul class="brands-ul">
+                      <li>
+                        <input class="checker" type="checkbox" name="Apple">Apple
+                      </li>
+                      <li><input class="checker" type="checkbox" name="Sony">Sony</li>
+                      <li><input class="checker" type="checkbox" name="Asus">Asus</li>
+                      <li><input class="checker" type="checkbox" name="Lenovo">Lenovo</li>
+                      <li><input class="checker" type="checkbox" name="Xiaomi">Xiaomi</li>
+                      <li><input class="checker" type="checkbox" name="LG">LG</li>
+                      <li><input class="checker" type="checkbox" name="Honor">Honor</li>
+                      <li><input class="checker" type="checkbox" name="Meizu">Meizu</li>
+                    </ul>
+                  </div>
+                </div>
+  
+                <div class="battery aside-mei">
+                  <div class="accordion" tabindex="0">
+                    <p>Battery Capactiy</p>
+                    <i class="fa-solid fa-angle-down"></i>
+                  </div>
+                  <div class="panel aside-mei">this is the Battery accordion</div>
+                </div>
+  
+                <div class="screen-size aside-mei">
+                  <div class="accordion" tabindex="0">
+                    <p>Screen Size</p>
+                    <i class="fa-solid fa-angle-down"></i>
+                  </div>
+                  <div class="panel aside-mei">
+                    this is the Screen Size accordion
+                  </div>
+                </div>
+  
+                <div class="ram aside-mei">
+                  <div class="accordion" tabindex="0">
+                    <p>RAM</p>
+                    <i class="fa-solid fa-angle-down"></i>
+                  </div>
+                  <div class="panel aside-mei">this is the RAM accordion</div>
+                </div>
+  
+                <div class="customer-ratings aside-mei">
+                  <div class="accordion" tabindex="0">
+                    <p>Customer Ratings</p>
+                    <i class="fa-solid fa-angle-down"></i>
+                  </div>
+                  <div class="panel aside-mei">
+                    this is the cusotmer ratings accordion
+                  </div>
+                </div>
+  
+                <div class="camera aside-mei">
+                  <div class="accordion" tabindex="0">
+                    <p>Camera</p>
+                    <i class="fa-solid fa-angle-down"></i>
+                  </div>
+                  <div class="panel aside-mei">this is the camera accordion</div>
+                </div>
+  
+                <div class="resolution-type aside-mei">
+                  <div class="accordion" tabindex="0">
+                    <p>Resolution Type</p>
+                    <i class="fa-solid fa-angle-down"></i>
+                  </div>
+                  <div class="panel aside-mei">
+                    this is the resolution type accordion
+                  </div>
+                </div>
+  
+                <div class="os aside-mei">
+                  <div class="accordion" tabindex="0">
+                    <p>Operation System</p>
+                    <i class="fa-solid fa-angle-down"></i>
+                  </div>
+                  <div class="panel aside-mei">this is the os accordion</div>
+                </div>
+              </div>
+            </aside>
+            <section>
+              <div class="desk-wrapper-section">
+                <div class="products-list" id="products-list-desk"></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-desk-container">
+        <div class="top-footer">
+          <div class="stay-in-touch">
+            <div class="stay-in-touch-inside">
+              <div>LET'S STAY IN TOUCH</div>
+              <small>Get udpates on sales specials and more</small>
+            </div>
+            <div class="subscribe">
+              <form action="/">
+                <input type="email" placeholder="Email address">
+                <input type="submit" value="SUBSCRIBE">
+              </form>
+            </div>
+          </div>
+          <div class="follow-and-icons">
+            <div class="kraya">
+              <div>
+                FOLLOW KRAYA.
+              </div>
+              <p>We want to hear from you</p>
+            </div>
+            <div class="icons">
+              <i class="fa-brands fa-lg fa-facebook"></i>
+              <i class="fa-brands fa-lg fa-twitter"></i>
+              <i class="fa-brands fa-lg fa-youtube"></i>
+              <i class="fa-brands fa-lg fa-instagram"></i>
+            </div>
+          </div>
+        </div>
+        <div class="mid-footer">
+          <div class="about">
+            <p>ABOUT</p>
+            <ul class="footer-ul">
+              <li><a href=""> About Us </a></li>
+              <li><a href=""> Careers </a></li>
+              <li><a href=""> Blog </a></li>
+              <li><a href=""> News </a></li>
+            </ul>
+          </div>
+          <div class="support">
+            <p>SUPPORT</p>
+            <ul class="footer-ul">
+              <li><a href=""> Payment </a></li>
+              <li><a href=""> Shipping </a></li>
+              <li><a href=""> Cancellation & Returns </a></li>
+              <li><a href=""> FAQs </a></li>
+            </ul>
+          </div>
+          <div class="policy">
+            <p>POLICY</p>
+            <ul class="footer-ul">
+              <li><a href=""> Terms of Use </a></li>
+              <li><a href=""> Privacy Policy </a></li>
+              <li><a href=""> Intellectual Property </a></li>
+              <li><a href=""> Sitemap </a></li>
+              <li><a href=""> Security </a></li>
+            </ul>
+          </div>
+          <div class="mailus">
+            <p>MAIL US</p>
+            <p class="mail">17187 N. Laurel Park Dr., Str. 110 Livonia, MI 48152 USA</p>
+          </div>
+          <div class="chat-support">
+            <p class="number">1800<span>123</span>4567</p>
+            <small>Service hours: 09:00-21:00</small>
+            <button class="chat-button">CHAT SUPPORT</button>
+            <div class="payment-methods">
+              <p>PAYMENT METHODS</p>
+              <div>
+                <img src="./assests/visa.png" alt="Visa">
+                <img src="./assests/master.png" alt="Master">
+                <img src="./assests/discover.png" alt="Discover">
+                <img src="./assests/american.png" alt="American">
+                <img src="./assests/paypal.png" alt="Paypal">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="last-footer">
+          <p>Copyright &copy; 2010 - 2018 commerce factory. All Rights Reserved </p>
+        </div>
+      </div>
+      <a href="#header">
+        <i class="fa-solid fa-angle-up"></i>
+      </a>
+    </footer>
+    
+    <script src="jquery.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <!-- <script type="module" src="index.js"></script> -->
+    <script type="module" src="index1.js"></script>
+
+  </body>
+</html>
